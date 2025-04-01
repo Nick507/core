@@ -348,7 +348,7 @@ bool protocol_main_loop (void)
             else if (state_get() & (STATE_ALARM|STATE_ESTOP|STATE_JOG)) // Everything else is gcode. Block if in alarm, eStop or jog state.
                 grbl.report.status_message(Status_SystemGClock);
             else // Parse and execute g-code block.
-                gc_execute_block(xcommand);
+                gc_state.last_error = gc_execute_block(xcommand);
 
             xcommand[0] = '\0';
         }

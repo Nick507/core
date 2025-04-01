@@ -76,7 +76,7 @@
 #define N_ABC_MOTORS (N_ABC_AXIS + N_GANGED)
 
 #ifndef PROBE_ENABLE
-#define PROBE_ENABLE        1
+#define PROBE_ENABLE        0
 #endif
 
 #ifndef NEOPIXELS_ENABLE
@@ -337,8 +337,8 @@
 #define MODBUS_TCP_ENABLED     0b100
 
 #if MODBUS_ENABLE == 2
-#undef MOBUS_ENABLE
-#define MOBUS_ENABLE 0b011
+#undef MODBUS_ENABLE
+#define MODBUS_ENABLE 0b011
 #endif
 
 #ifndef MODBUS_ENABLE
